@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed;
     public float jump;
     private bool landed;
+
+    public Transform keyfollowPoint;
+    public Key followingKey;
+
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
