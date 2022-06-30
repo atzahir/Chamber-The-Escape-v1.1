@@ -25,7 +25,7 @@ public class Door : MonoBehaviour
     {
         if(waitingToOpen)
         {
-            if(Vector3.Distance(thePlayer.followingKey.transform.position, transform.position) <0.1f )
+            if(Vector2.Distance(thePlayer.followingKey.transform.position, transform.position) <0.1f )
             {
                 waitingToOpen = false;
                 doorOpen = true;
@@ -37,7 +37,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        if(doorOpen && Vector3.Distance(thePlayer.transform.position, transform.position) < 1f && Input.GetKey(KeyCode.F))
+        if(doorOpen && Vector2.Distance(thePlayer.transform.position, transform.position) < 2f && Input.GetKey(KeyCode.F))
         {
             SceneManager.LoadScene(nextlevel);
         }

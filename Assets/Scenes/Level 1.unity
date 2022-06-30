@@ -418,6 +418,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 293.14725, y: 4.588146}
   m_EdgeRadius: 0
+--- !u!4 &494858277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1235999978194323708, guid: b4e6d5ccf09234845bbaaf372829eeb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136127818752566239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669921625
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1422376532}
   - component: {fileID: 1422376534}
+  - component: {fileID: 1422376533}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -739,6 +746,19 @@ Transform:
   m_Father: {fileID: 669921626}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422376533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422376531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d486c07aae161d04e96fbd3347078bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTime: 2
 --- !u!212 &1422376534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1478,12 +1498,12 @@ PrefabInstance:
     - target: {fileID: 1136127818873842036, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.55
+      value: -19.4
       objectReference: {fileID: 0}
     - target: {fileID: 1136127818873842036, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1136127818873842036, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
@@ -1525,6 +1545,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1136127818873842040, guid: b4e6d5ccf09234845bbaaf372829eeb2,
+        type: 3}
+      propertyPath: followingKey
+      value: 
+      objectReference: {fileID: 6854658288792188954}
+    - target: {fileID: 1136127818873842040, guid: b4e6d5ccf09234845bbaaf372829eeb2,
+        type: 3}
+      propertyPath: keyfollowPoint
+      value: 
+      objectReference: {fileID: 494858277}
     - target: {fileID: 1136127818873842041, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
       propertyPath: m_Name
@@ -4494,7 +4524,7 @@ MonoBehaviour:
     type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  nextlevel: 
+  nextlevel: Level 2
 --- !u!4 &6854658288549210766
 Transform:
   m_ObjectHideFlags: 0
