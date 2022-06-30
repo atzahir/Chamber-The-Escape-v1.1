@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Deadly
+  - Object Area
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

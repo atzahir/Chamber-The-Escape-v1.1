@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     private bool landed;
 
+
     public Transform keyfollowPoint;
     public Key followingKey;
 
@@ -17,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        if (PlayerPrefs.GetInt("from_next") == 1)
+        {
+            transform.position = GameObject.Find("SpawnFromNext").transform.position;
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Run();
         }
-
     }
 
     private void Jump()
