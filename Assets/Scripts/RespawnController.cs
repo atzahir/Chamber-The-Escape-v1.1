@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawnController : MonoBehaviour
-{
-    private Vector3 respawnPoint;
-    private void OnTriggerEnter2D(Collider2D target)
+{   
+    public PlayerMovement gamePlayer;
+    public float respawnDelay;
+
+
+    private void Start()
     {
-        if (target.gameObject.tag == "Deadly" || target.gameObject.tag == "Enemy")
-        {
-            transform.position = respawnPoint;
-        }
-        else if(target.gameObject.tag == "Checkpoint")
-        {
-            respawnPoint = transform.position;
-        }
+        gamePlayer = FindObjectOfType<PlayerMovement>();
+    }
+
+    
+
+    public void Respawn()
+    {
+        StartCoroutine (RespawnCoroutine());
+    } 
+
+    IEnumerator RespawnCoroutine()
+    {
+        gamePlayer.gameObject.SetActive(false);
+        yield return new WaitForSeconds(respawnDelay);
+        gamePlayer.transform.position = gamePlayer.respawnPoint;
+        gamePlayer.gameObject.SetActive(true);
     }
 }

@@ -9,20 +9,24 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed;
     public float jump;
     private bool landed;
+    public Vector3 respawnPoint;
 
 
     public Transform keyfollowPoint;
     public Key followingKey;
 
+    public RespawnController gameRespawn;
+
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        if (PlayerPrefs.GetInt("from_next") == 1)
+        gameRespawn = FindObjectOfType<RespawnController>();
+        /*if (PlayerPrefs.GetInt("from_next") == 1)
         {
             transform.position = GameObject.Find("SpawnFromNext").transform.position;
             PlayerPrefs.DeleteAll();
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -61,4 +65,15 @@ public class PlayerMovement : MonoBehaviour
             landed = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.gameObject.tag == "Deadly" || target.gameObject.tag == "Enemy")
+        {
+            gameRespawn.Respawn();
+        }
+        else if (target.gameObject.tag == "Checkpoint")
+        {
+            respawnPoint = target.transform.position;
+        }
+    }
 }
