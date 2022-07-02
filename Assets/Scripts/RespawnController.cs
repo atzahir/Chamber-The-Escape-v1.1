@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RespawnController : MonoBehaviour
 {   
-    public PlayerMovement gamePlayer;
+    public PlayerController gamePlayer;
     public float respawnDelay;
 
 
     private void Start()
     {
-        gamePlayer = FindObjectOfType<PlayerMovement>();
+        gamePlayer = FindObjectOfType<PlayerController>();
     }
 
     

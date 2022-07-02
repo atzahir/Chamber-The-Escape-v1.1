@@ -415,32 +415,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 293.14725, y: 4.588146}
   m_EdgeRadius: 0
---- !u!4 &494858277 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1235999978194323708, guid: b4e6d5ccf09234845bbaaf372829eeb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136127818752566239}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &517554393 stripped
+--- !u!1 &594640919
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1136127818873842041, guid: b4e6d5ccf09234845bbaaf372829eeb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136127818752566239}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &517554394
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594640921}
+  - component: {fileID: 594640920}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &594640920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517554393}
+  m_GameObject: {fileID: 594640919}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ed9052621752fd4aac27e99c080148c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gamePlayer: {fileID: 0}
-  respawnDelay: 0
+  respawnDelay: 2
+--- !u!4 &594640921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594640919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669921625
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +499,7 @@ Transform:
   - {fileID: 6854658288549210766}
   - {fileID: 6854658288792188953}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781778448
 GameObject:
@@ -510,7 +529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864799350
 GameObject:
@@ -649,7 +668,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232473227
 GameObject:
@@ -661,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232473228}
   m_Layer: 0
-  m_Name: Respawn
+  m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,7 +822,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1420176074}
   - component: {fileID: 1420176075}
-  - component: {fileID: 1420176076}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Checkpoint
@@ -851,20 +869,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5696581, y: 11.298559}
   m_EdgeRadius: 0
---- !u!114 &1420176076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420176073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed9052621752fd4aac27e99c080148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePlayer: {fileID: 0}
-  respawnDelay: 2
 --- !u!1 &1422376531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1068,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1672708830}
   - component: {fileID: 1672708831}
-  - component: {fileID: 1672708832}
   m_Layer: 0
   m_Name: Checkpoint (2)
   m_TagString: Checkpoint
@@ -1112,20 +1115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5696581, y: 12.092293}
   m_EdgeRadius: 0
---- !u!114 &1672708832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672708829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed9052621752fd4aac27e99c080148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePlayer: {fileID: 0}
-  respawnDelay: 2
 --- !u!1 &2000851903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2000851904}
   - component: {fileID: 2000851905}
-  - component: {fileID: 2000851906}
   m_Layer: 0
   m_Name: Checkpoint (1)
   m_TagString: Checkpoint
@@ -1184,20 +1172,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5696581, y: 10.781191}
   m_EdgeRadius: 0
---- !u!114 &2000851906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000851903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed9052621752fd4aac27e99c080148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePlayer: {fileID: 0}
-  respawnDelay: 2
 --- !u!1 &2077288791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2077288792}
   - component: {fileID: 2077288793}
-  - component: {fileID: 2077288794}
   m_Layer: 0
   m_Name: Checkpoint (3)
   m_TagString: Checkpoint
@@ -1256,20 +1229,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5696581, y: 17.462126}
   m_EdgeRadius: 0
---- !u!114 &2077288794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077288791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed9052621752fd4aac27e99c080148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePlayer: {fileID: 0}
-  respawnDelay: 2
 --- !u!212 &528831268458668889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1766,7 +1725,7 @@ PrefabInstance:
     - target: {fileID: 1136127818873842036, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1136127818873842036, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
@@ -1823,18 +1782,12 @@ PrefabInstance:
       propertyPath: followingKey
       value: 
       objectReference: {fileID: 6854658288792188954}
-    - target: {fileID: 1136127818873842040, guid: b4e6d5ccf09234845bbaaf372829eeb2,
-        type: 3}
-      propertyPath: keyfollowPoint
-      value: 
-      objectReference: {fileID: 494858277}
     - target: {fileID: 1136127818873842041, guid: b4e6d5ccf09234845bbaaf372829eeb2,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 513922701, guid: b4e6d5ccf09234845bbaaf372829eeb2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e6d5ccf09234845bbaaf372829eeb2, type: 3}
 --- !u!1 &2232937195672227464
 GameObject:

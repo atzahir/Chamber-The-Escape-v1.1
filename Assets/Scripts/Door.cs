@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    private PlayerMovement thePlayer;
+    private PlayerController thePlayer;
 
     public SpriteRenderer theSR;
     public Sprite doorOpenSprite;
@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerMovement>();
+        thePlayer = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame

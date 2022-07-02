@@ -29,7 +29,7 @@ public class Key : MonoBehaviour
             if(!isFollowing)
             {
                 isFollowing = true;
-                PlayerMovement thePlayer = FindObjectOfType<PlayerMovement>();
+                PlayerController thePlayer = FindObjectOfType<PlayerController>();
 
                 followTarget = thePlayer.keyfollowPoint;
                 thePlayer.followingKey = this;

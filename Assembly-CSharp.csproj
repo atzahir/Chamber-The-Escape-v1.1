@@ -57,13 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\Control\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Control\BetterJump.cs" />
+    <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\Scripts\PreviousLevel.cs" />
     <Compile Include="Assets\Scripts\RespawnController.cs" />
+    <Compile Include="Assets\Scripts\StaminaController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game\Sprites\Abstract Platformer\Spritesheet\spritesheet_players.xml" />
