@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1136127818873842039}
   - component: {fileID: 1136127818873842040}
   - component: {fileID: 1498460315}
-  - component: {fileID: 2090054256}
+  - component: {fileID: 1497195755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,6 +153,7 @@ MonoBehaviour:
   keyfollowPoint: {fileID: 1235999978194323708}
   followingKey: {fileID: 0}
   gameRespawn: {fileID: 0}
+  stamina: {fileID: 0}
 --- !u!114 &1498460315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
---- !u!114 &2090054256
+--- !u!114 &1497195755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,11 +177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136127818873842041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daef51225b4f6d6419d1c551ff3f5e7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 61a6fe42baa6be34792b731a10ea56e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  Stamina: 100
+  MaxStamina: 100
 --- !u!1 &2711180452194554710
 GameObject:
   m_ObjectHideFlags: 0

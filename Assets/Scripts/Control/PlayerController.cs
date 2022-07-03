@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Key followingKey;
 
     public RespawnController gameRespawn;
+    public StaminaController stamina;
 
 
     void Start()
@@ -56,8 +57,17 @@ public class PlayerController : MonoBehaviour
 
     private void Run()
     {
-        float hInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(hInput * runSpeed, body.velocity.y);
+        
+        stamina = GetComponent<StaminaController>();
+        if(stamina.Stamina > 0)
+        {
+            float hInput = Input.GetAxis("Horizontal");
+            body.velocity = new Vector2(hInput * runSpeed, body.velocity.y);
+        }
+        else if(stamina.Stamina == 0)
+        {
+
+        }
     }
 
 
