@@ -50,10 +50,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Jump()
-    { 
-        
-    }
 
     private void Run()
     {
