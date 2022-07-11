@@ -7,8 +7,9 @@ public class NextLevel : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" )
         {
+            if(Input.GetKeyDown(KeyCode.F))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

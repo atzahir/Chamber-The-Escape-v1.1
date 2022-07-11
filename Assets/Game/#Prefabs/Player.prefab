@@ -146,14 +146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97f7fbda95864248ad516af0f5ab40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  runSpeed: 10
+  speed: 9
+  runSpeed: 13
   jump: 16
   respawnPoint: {x: 0, y: 0, z: 0}
   keyfollowPoint: {fileID: 1235999978194323708}
   followingKey: {fileID: 0}
   gameRespawn: {fileID: 0}
-  stamina: {fileID: 0}
+  stamina: {fileID: 1497195755}
 --- !u!114 &1498460315
 MonoBehaviour:
   m_ObjectHideFlags: 0
