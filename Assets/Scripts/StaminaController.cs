@@ -12,9 +12,9 @@ public class StaminaController : MonoBehaviour
     //---------------------------------------------------------
     private float StaminaRegenTimer = 0.0f;
     //---------------------------------------------------------
-    private const float StaminaDecreasePerFrame = 20.0f;
-    private const float StaminaIncreasePerFrame = 15.0f;
-    private const float StaminaTimeToRegen = 2.0f;
+    private const float StaminaDecreasePerFrame = 25.0f;
+    private const float StaminaIncreasePerFrame = 30.0f;
+    private const float StaminaTimeToRegen = 1.0f;
     //---------------------------------------------------------
 
     private void Start()

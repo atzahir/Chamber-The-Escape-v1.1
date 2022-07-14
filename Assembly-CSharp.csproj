@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Control\BetterJump.cs" />
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\FallPlatform.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
