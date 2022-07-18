@@ -15,14 +15,13 @@ public class MovingPlatform : MonoBehaviour
         transform.position = points[startingPoint].position; 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         // checking the distance of the platform and the point
-        if(Vector2.Distance(transform.position, points[i].position) < 0.02f)
+        if (Vector2.Distance(transform.position, points[i].position) < 0.02f)
         {
             i++; //increase the index
-            if(i == points.Length) // check if the platform was on the last point after the index increase
+            if (i == points.Length) // check if the platform was on the last point after the index increase
             {
                 i = 0;
             }

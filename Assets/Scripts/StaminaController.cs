@@ -12,8 +12,8 @@ public class StaminaController : MonoBehaviour
     //---------------------------------------------------------
     private float StaminaRegenTimer = 0.0f;
     //---------------------------------------------------------
-    private const float StaminaDecreasePerFrame = 25.0f;
-    private const float StaminaIncreasePerFrame = 30.0f;
+    private const float StaminaDecreasePerFrame = 20.0f;
+    private const float StaminaIncreasePerFrame = 25.0f;
     private const float StaminaTimeToRegen = 1.0f;
     //---------------------------------------------------------
 
@@ -25,8 +25,8 @@ public class StaminaController : MonoBehaviour
 
     private void Update()
     {
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        if (isRunning)
+
+        if (Input.GetKey(KeyCode.LeftShift) && (Input.GetAxis("Horizontal")!=0))
         {
             Stamina = Mathf.Clamp(Stamina - (StaminaDecreasePerFrame * Time.deltaTime), 0.0f, MaxStamina);
             staminaBar.value = Stamina;

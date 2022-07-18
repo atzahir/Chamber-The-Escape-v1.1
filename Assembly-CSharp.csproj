@@ -61,13 +61,17 @@
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\FallPlatform.cs" />
+    <Compile Include="Assets\Scripts\FallingObject.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
+    <Compile Include="Assets\Scripts\MovePlatform.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\NextLevel.cs" />
+    <Compile Include="Assets\Scripts\PressurePlate.cs" />
     <Compile Include="Assets\Scripts\PreviousLevel.cs" />
     <Compile Include="Assets\Scripts\RespawnController.cs" />
     <Compile Include="Assets\Scripts\StaminaController.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game\Sprites\Abstract Platformer\Spritesheet\spritesheet_players.xml" />

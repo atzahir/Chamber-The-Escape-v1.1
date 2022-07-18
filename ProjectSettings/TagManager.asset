@@ -48,3 +48,9 @@ TagManager:
   - name: Deadly
     uniqueID: 1773506477
     locked: 0
+  - name: Door
+    uniqueID: 2976010131
+    locked: 0
+  - name: Background
+    uniqueID: 3785351411
+    locked: 0

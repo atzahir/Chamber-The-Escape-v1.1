@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Key followingKey;
 
     public RespawnController gameRespawn;
+    public FallingObject objectRespawn;
     public StaminaController stamina;
 
 
@@ -25,10 +26,11 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         gameRespawn = FindObjectOfType<RespawnController>();
+
         if (PlayerPrefs.GetInt("from_next") == 1)
         {
             transform.position = GameObject.Find("SpawnFromNext").transform.position;
-            PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteKey("from_next");
         }
     }
 
@@ -69,17 +71,39 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Platform")
+        {
             landed = true;
+        }
+
+        if (collision.gameObject.tag == "Deadly" || collision.gameObject.tag == "Enemy")
+        {
+            gameRespawn.Respawn();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.gameObject.tag == "Deadly" || target.gameObject.tag == "Enemy")
+        if (target.gameObject.name.Equals("KeyOne"))
         {
-            gameRespawn.Respawn();
+            PlayerPrefs.SetInt("KeyFall", 1);
+            GameObject.Find("KeyOne").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("KeyOne").GetComponent<CircleCollider2D>().enabled = false;
         }
-        else if (target.gameObject.tag == "Checkpoint")
+        else if (target.gameObject.name.Equals("KeyTwo"))
+        {
+            PlayerPrefs.SetInt("KeyFall", 2);
+            GameObject.Find("KeyTwo").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("KeyTwo").GetComponent<CircleCollider2D>().enabled = false;
+        }
+        else if (target.gameObject.name.Equals("KeyThree"))
+        {
+            PlayerPrefs.SetInt("KeyFall", 3);
+            GameObject.Find("KeyThree").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("KeyThree").GetComponent<CircleCollider2D>().enabled = false;
+        }
+
+        if (target.gameObject.tag == "Checkpoint")
         {
             respawnPoint = target.transform.position;
         }
