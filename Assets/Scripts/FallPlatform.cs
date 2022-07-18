@@ -16,7 +16,10 @@ public class FallPlatform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         start = transform.position;
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -25,7 +28,6 @@ public class FallPlatform : MonoBehaviour
             Invoke("Respawn", fallDelay + respawnDelay);
         }
     }
-
     void Fall() // Or DropPlatform ()
     {
         rb.isKinematic = false;
