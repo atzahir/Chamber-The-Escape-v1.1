@@ -13,14 +13,12 @@ public class PlayerController : MonoBehaviour
     private bool landed;
     public Vector3 respawnPoint;
 
-
     public Transform keyfollowPoint;
     public Key followingKey;
 
     public RespawnController gameRespawn;
     public FallingObject objectRespawn;
     public StaminaController stamina;
-
 
     void Start()
     {
