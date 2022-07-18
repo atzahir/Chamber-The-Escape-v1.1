@@ -16,10 +16,7 @@ public class FallPlatform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         start = transform.position;
     }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
