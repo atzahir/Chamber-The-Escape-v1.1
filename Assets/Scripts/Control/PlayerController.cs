@@ -6,7 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D body;
     public float speed;
+    public Transform groundChecker;
+    public LayerMask whatIsGround;
     public float runSpeed;
+    public float checkRadius;
+
 
     public float jump;
 
@@ -34,13 +38,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        landed = Physics2D.OverlapCircle(groundChecker.position, checkRadius, whatIsGround);
         float hInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(hInput * speed, body.velocity.y);
 
         if (Input.GetButtonDown("Jump") && landed)
         {
             body.velocity = Vector2.up * jump;
-            landed = false;
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
