@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public Key followingKey;
 
     public RespawnController gameRespawn;
-    public FallingObject objectRespawn;
     public StaminaController stamina;
 
     void Start()
