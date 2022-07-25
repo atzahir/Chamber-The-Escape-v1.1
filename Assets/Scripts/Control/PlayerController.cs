@@ -39,8 +39,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         landed = Physics2D.OverlapCircle(groundChecker.position, checkRadius, whatIsGround);
-        float hInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(hInput * speed, body.velocity.y);
+        float direction = Input.GetAxis("Horizontal");
+
+        if (direction > 0f)
+        {
+            body.velocity = new Vector2(direction * speed, body.velocity.y);
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        else if (direction < 0f)
+        {
+            body.velocity = new Vector2(direction * speed, body.velocity.y);
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+        else
+        {
+            body.velocity = new Vector2(0, body.velocity.y);
+        }
+
 
         if (Input.GetButtonDown("Jump") && landed)
         {

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  groundChecker: {fileID: 0}
+  groundChecker: {fileID: 7061226797531753516}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
