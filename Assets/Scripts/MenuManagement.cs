@@ -5,38 +5,66 @@ using UnityEngine.SceneManagement;
 
 public class MenuManagement : MonoBehaviour
 {
-    [SerializeField] GameObject obcejtMenu;
+    [SerializeField] GameObject objectMenu;
+    /*public GameObject Canvas;
+    *//*public GameObject Camera;*/
+    bool Paused = false;
 
-    public void Pause()
+    void Start()
     {
-        obcejtMenu.SetActive(true);
-        Time.timeScale = 0f;
+        /*Canvas.gameObject.SetActive(false);*/
     }
 
-    public void Resume()
+    void Update()
     {
-        obcejtMenu.SetActive(false);
-        Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (Input.GetKeyDown("escape"))
+            {
+                if (Paused == true)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }
+        }
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-        
-    public void Options()
+
+    public void Pause()
     {
-        obcejtMenu.SetActive(true);
+        objectMenu.SetActive(true);
+        Time.timeScale = 0f;
+        Paused = true;
+    }
+
+    public void Resume()
+    {
+        objectMenu.SetActive(false);
+        Time.timeScale = 1f;
+        Paused = false;
+    }
+        
+    public void OpenAnotherMenu()
+    {
+        objectMenu.SetActive(true);
     }
 
     public void Back()
     {
-        obcejtMenu.SetActive(false);
+        objectMenu.SetActive(false);
     }
 
     public void QuitGame()
     {
-
+        Application.Quit();
     }
 
 }

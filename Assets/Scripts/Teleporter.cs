@@ -50,7 +50,7 @@ public class Teleporter : MonoBehaviour
             betterJumpScript.enabled = false;
 
             playerRigidbody.mass = 0.0001f;
-            playerRigidbody.gravityScale = 0;
+            playerRigidbody.gravityScale = 0.0001f;
             
             if (PlayerPrefs.GetInt("start") == 1)
             {

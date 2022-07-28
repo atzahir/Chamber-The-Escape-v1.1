@@ -13,7 +13,7 @@ public class FallSpike : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         start = transform.position;
-        rb.gravityScale *= 6;
+        rb.gravityScale *= 20;
     }
 
     void OnTriggerEnter2D(Collider2D trig)
