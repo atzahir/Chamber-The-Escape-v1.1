@@ -19,6 +19,13 @@ public class TextManagement : MonoBehaviour
             textObject.transform.localScale = new Vector3(1, 1, 0);
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            textObject.transform.localScale = new Vector3(1, 1, 0);
+        }
+    }
 
     // Update is called once per frame
     private void OnTriggerExit2D(Collider2D textTriggerExit)

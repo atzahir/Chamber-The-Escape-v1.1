@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1136127818873842040}
   - component: {fileID: 1498460315}
   - component: {fileID: 1497195755}
-  - component: {fileID: 1134320648}
+  - component: {fileID: 5605313449287728198}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,7 +190,7 @@ MonoBehaviour:
   staminaBar: {fileID: 0}
   Stamina: 100
   MaxStamina: 100
---- !u!114 &1134320648
+--- !u!114 &5605313449287728198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
