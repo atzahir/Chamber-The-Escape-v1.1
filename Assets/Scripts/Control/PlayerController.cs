@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public RespawnController gameRespawn;
     public StaminaController stamina;
 
+    public Animator animator;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -39,16 +41,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         landed = Physics2D.OverlapCircle(groundChecker.position, checkRadius, whatIsGround);
-        float direction = Input.GetAxis("Horizontal");
+        float direction = Input.GetAxis("Horizontal") * speed;
+
+        animator.SetBool("isRunning", false);
+        animator.SetFloat("Speed", Mathf.Abs(direction));
+
+
 
         if (direction > 0f)
         {
-            body.velocity = new Vector2(direction * speed, body.velocity.y);
+            body.velocity = new Vector2(direction, body.velocity.y);
             transform.localScale = new Vector2(1f, 1f);
         }
         else if (direction < 0f)
         {
-            body.velocity = new Vector2(direction * speed, body.velocity.y);
+            body.velocity = new Vector2(direction, body.velocity.y);
             transform.localScale = new Vector2(-1f, 1f);
         }
         else
@@ -62,8 +69,18 @@ public class PlayerController : MonoBehaviour
             body.velocity = Vector2.up * jump;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (landed == true)
         {
+            animator.SetBool("isJumping", false);
+        }
+
+        if(landed == false)
+        {
+            animator.SetBool("isJumping", true);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        { 
             Run();
         }
     }
@@ -71,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     private void Run()
     {
-        
+        animator.SetBool("isRunning", true);
         stamina = GetComponent<StaminaController>();
         if(stamina.Stamina > 0)
         {
