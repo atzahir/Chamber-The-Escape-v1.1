@@ -14,6 +14,8 @@ public class Door : MonoBehaviour
 
     public string nextlevel;
 
+    [SerializeField] AudioSource doorOpenedSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class Door : MonoBehaviour
                 doorOpen = true;
 
                 theSR.sprite = doorOpenSprite;
+                doorOpenedSoundEffect.Play();
 
                 thePlayer.followingKey.gameObject.SetActive(false);
                 thePlayer.followingKey = null;
