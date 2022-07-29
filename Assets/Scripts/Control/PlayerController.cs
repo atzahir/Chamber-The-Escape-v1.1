@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(direction));
 
 
-
         if (direction > 0f)
         {
             body.velocity = new Vector2(direction, body.velocity.y);
@@ -67,6 +66,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && landed)
         {
             body.velocity = Vector2.up * jump;
+            animator.SetTrigger("isJumping");
         }
 
         if (landed == true)
