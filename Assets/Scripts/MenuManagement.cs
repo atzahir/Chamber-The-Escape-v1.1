@@ -10,8 +10,8 @@ public class MenuManagement : MonoBehaviour
     private GameObject pauseMenu;
     private GameObject optionsMenu;
     private GameObject quitMenu;
+    private GameObject mainMenu;
     bool Paused = false;
-    bool onAnotherMenu = false;
 
     void Start()
     {
@@ -20,16 +20,24 @@ public class MenuManagement : MonoBehaviour
             text = GameObject.FindGameObjectsWithTag("TextGuide");
         }
 
-        pauseMenu = GameObject.Find("PauseMenu");
         optionsMenu = GameObject.Find("OptionsMenu");
         quitMenu = GameObject.Find("QuitConfirmation");
 
-        allMenuZero();
+        if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 6)
+        {
+            pauseMenu = GameObject.Find("PauseMenu");
+            allMenuZero();
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            mainMenu = GameObject.Find("MainMenu");
+            MainMenuBack();
+        }
     }
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0 || SceneManager.GetActiveScene().buildIndex != 6)
+        if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 6)
         {
             if (Input.GetKeyDown("escape"))
             {
@@ -48,7 +56,15 @@ public class MenuManagement : MonoBehaviour
 
     void allMenuZero()
     {
-        pauseMenu.transform.localScale = new Vector3(0, 0, 0);
+        if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 6)
+        {
+            pauseMenu.transform.localScale = new Vector3(0, 0, 0);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            mainMenu.transform.localScale = new Vector3(0, 0, 0);
+        }
+        
         optionsMenu.transform.localScale = new Vector3(0, 0, 0);
         quitMenu.transform.localScale = new Vector3(0, 0, 0);
     }
@@ -83,6 +99,7 @@ public class MenuManagement : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Resume();
     }
     public void PauseMenu()
     {
@@ -105,15 +122,12 @@ public class MenuManagement : MonoBehaviour
         quitMenu.transform.localScale = new Vector3(3.39823f, 3.39823f, 0);
     }
 
-    /*public void OpenAnotherMenu()
+    public void MainMenuBack()
     {
-        objectMenu.SetActive(true);
+        menuInitializer();
+        mainMenu.transform.localScale = new Vector3(3f, 3f, 0);
     }
 
-    public void Back()
-    {
-        objectMenu.SetActive(false);
-    }*/
 
     public void QuitGame()
     {
