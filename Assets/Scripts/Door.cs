@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
 
     public bool doorOpen, waitingToOpen;
 
-    public string nextlevel;
+    /*public string nextlevel;*/
 
     [SerializeField] AudioSource doorOpenedSoundEffect;
 
@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
 
         if(doorOpen && Vector2.Distance(thePlayer.transform.position, transform.position) < 2f && Input.GetKey(KeyCode.F))
         {
-            SceneManager.LoadScene(nextlevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

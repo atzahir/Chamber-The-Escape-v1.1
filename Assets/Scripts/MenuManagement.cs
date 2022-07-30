@@ -107,7 +107,11 @@ public class MenuManagement : MonoBehaviour
         menuInitializer();
         pauseMenu.transform.localScale = new Vector3(1, 1, 0);
     }
-
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Resume();
+    }
     public void OptionsMenu()
     {
         /*objectMenu.SetActive(true);*/
@@ -138,4 +142,6 @@ public class MenuManagement : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    
+
 }
